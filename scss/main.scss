@@ -1,0 +1,25 @@
+//fonts
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900);
+
+// helpers
+@import './base/vars';
+@import './base/helpers';
+@import './base/reset';
+@import './base/repeat';
+
+// blocks
+@import './blocks/header';
+@import './blocks/home';
+@import './blocks/about-us';
+@import './blocks/problems';
+@import './blocks/number';
+@import './blocks/calculation';
+@import './blocks/services';
+@import './blocks/widgets';
+@import './blocks/integrations';
+@import './blocks/clients';
+@import './blocks/certificates';
+@import './blocks/questions';
+@import './blocks/free';
+@import './blocks/footer';

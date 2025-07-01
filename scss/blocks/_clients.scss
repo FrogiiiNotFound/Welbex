@@ -1,0 +1,135 @@
+.clients {
+  position: relative;
+  padding: 100px 0px;
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--light-text);
+    margin-bottom: 70px;
+  }
+
+  &__texts {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    max-width: 391px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--light-text);
+
+    & span {
+      font-weight: 700;
+      background: linear-gradient(90deg, #fcb045 36.99%, #fd1d1d 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__text {
+    max-width: 310px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--light-text);
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px 0px;
+    flex-wrap: wrap;
+  }
+
+  &__item-icon {
+    margin-bottom: 10px;
+  }
+
+  &__item-text {
+    min-width: 230px;
+    max-width: 230px;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--light-text);
+  }
+
+  &__decor-1 {
+    user-select: none;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+  }
+}
+
+/* ============================================================================== */
+
+@media (max-width: 1250px) {
+  .clients {
+    &__title {
+      text-align: center;
+    }
+
+    &__item {
+      text-align: center;
+
+      &:nth-last-child(-n + 7) {
+        display: none;
+      }
+    }
+
+    &__list {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .clients {
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__text {
+      font-size: 13px;
+    }
+
+    &__item {
+      &:nth-last-child(-n + 8) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 528px) {
+  .clients {
+    padding: 50px 0px;
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__texts {
+      text-align: center;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    &__item {
+      &:nth-last-child(-n + 12) {
+        display: none;
+      }
+    }
+  }
+}

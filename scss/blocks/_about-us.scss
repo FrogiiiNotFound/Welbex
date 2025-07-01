@@ -1,0 +1,115 @@
+.about-us {
+  padding: 100px 0px;
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--light-text);
+    margin-bottom: 70px;
+  }
+
+  &__subtitle {
+    max-width: 389px;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    background: linear-gradient(90deg, #fcb045 36.99%, #fd1d1d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    & span {
+      font-weight: 400;
+      color: var(--light-text);
+      -webkit-text-fill-color: azure;
+    }
+    margin-bottom: 50px;
+  }
+
+  &__perks {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__perk-number {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 48px;
+    text-transform: uppercase;
+    background: linear-gradient(0deg, #fcb045 24.21%, #ff3f78 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__perk-text {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+/* ============================================================================== */
+
+@media (max-width: 1250px) {
+  .about-us {
+    &__title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    &__subtitle {
+      text-align: center;
+      margin: 0px auto 50px;
+    }
+
+    &__perks {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &__perk {
+      max-width: 300px;
+    }
+
+    &__perk-text {
+      max-width: 180px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    &__perk-text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 528px) {
+  .about-us {
+    padding: 50px 0px;
+
+    &__title {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__perks {
+      flex-direction: column;
+    }
+
+    &__perk {
+      margin: 0px auto 20px;
+    }
+
+    &__perk-text {
+      margin: 0px auto;
+    }
+  }
+}

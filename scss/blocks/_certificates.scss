@@ -1,0 +1,147 @@
+.certificates {
+  position: relative;
+  padding: 100px 0px;
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--light-text);
+    margin-bottom: 70px;
+  }
+
+  &__texts {
+    display: flex;
+    gap: 238px;
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    max-width: 250px;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    background: linear-gradient(4deg, #fcb045 36.99%, #fd1d1d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    & span {
+      font-weight: 400;
+      color: var(--light-text);
+      -webkit-text-fill-color: white;
+    }
+  }
+
+  &__text {
+    max-width: 250px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--light-text);
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__item {
+    width: 195px;
+    height: 105px;
+
+    border: 1px solid var(--light-stroke);
+    backdrop-filter: blur(15px);
+    background: linear-gradient(
+      137deg,
+      rgba(255, 246, 233, 0.1) 0%,
+      rgba(26, 29, 35, 0.1) 26.62%,
+      rgba(26, 29, 35, 0.1) 52.1%,
+      rgba(26, 29, 35, 0.2) 77.62%,
+      rgba(26, 29, 35, 0.2) 100%
+    );
+
+    display: flex;
+    justify-content: center; /* Горизонтальное центрирование */
+    align-items: center; /* Вертикальное центрирование */
+  }
+
+  &__decor-1 {
+    user-select: none;
+    position: absolute;
+    top: 30%;
+    right: 20%;
+  }
+
+  &__decor-2 {
+    user-select: none;
+    position: absolute;
+    top: 30%;
+    right: 20%;
+  }
+}
+
+/* ============================================================================== */
+
+@media (max-width: 1250px) {
+  .certificates {
+    &__title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .certificates {
+    &__texts {
+      text-align: center;
+      gap: 30px;
+      flex-direction: column;
+    }
+
+    &__subtitle {
+      max-width: 450px;
+      margin: 0px auto;
+    }
+
+    &__text {
+      max-width: 450px;
+      margin: 0px auto;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 528px) {
+  .certificates {
+    padding: 50px 0px;
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__text {
+      font-size: 13px;
+    }
+
+    &__item {
+      width: 125px;
+      
+      & img {
+        width: 100px;
+      }
+    }
+  }
+}

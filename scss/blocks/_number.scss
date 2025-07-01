@@ -1,0 +1,250 @@
+.number {
+  position: relative;
+
+  padding: 100px 0px;
+  background: linear-gradient(
+    -223deg,
+    rgba(255, 246, 233, 0.137) 0%,
+    rgba(26, 29, 35, 0.05) 26.62%,
+    rgba(26, 29, 35, 0.05) 48.28%,
+    rgba(26, 29, 35, 0.01) 63.7%,
+    rgba(26, 29, 35, 0.171) 85.6%
+  );
+  backdrop-filter: blur(5px);
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--light-text);
+    margin-bottom: 70px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__subtitle {
+    max-width: 389px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--light-text);
+
+    & span {
+      font-weight: 700;
+      background: linear-gradient(90deg, #fcb045 36.99%, #fd1d1d 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    max-width: 292px;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--light-text);
+  }
+
+  &__phone-title {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+  }
+
+  &__phone-input {
+    border: 1px solid var(--light-stroke);
+    background: rgba(14, 16, 20, 0.6);
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--light-text);
+    margin-bottom: 30px;
+
+    padding: 20px;
+  }
+
+  &__phone-addition {
+    display: flex;
+    gap: 31px;
+    align-items: center;
+  }
+
+  &__phone-button {
+    cursor: pointer;
+    background: var(--blue);
+    padding: 20px 68px;
+  }
+
+  &__phone-text {
+    max-width: 292px;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--light-text);
+
+    & span {
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+
+      &:hover {
+        color: var(--light-gray);
+      }
+    }
+  }
+
+  &__decor-1 {
+    user-select: none;
+    position: absolute;
+    top: -5%;
+    right: 30%;
+  }
+
+  &__decor-2 {
+    user-select: none;
+    position: absolute;
+    bottom: 5%;
+    right: 15%;
+  }
+
+  &__decor-3 {
+    user-select: none;
+    position: absolute;
+    bottom: -5%;
+    right: 50%;
+  }
+
+  &__decor-4 {
+    user-select: none;
+    position: absolute;
+    top: -5%;
+    left: 10%;
+  }
+}
+
+.button-small {
+  padding: 20px 84px;
+}
+
+/* ============================================================================== */
+
+@media (max-width: 1250px) {
+  .number {
+    &__title {
+      text-align: center;
+    }
+
+    &__subtitle {
+      font-size: 22px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+
+    &__phone-text {
+      font-size: 10px;
+    }
+
+    &__phone-input {
+      padding: 15px;
+    }
+
+    &__phone-title {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .number {
+    &__title {
+      margin-bottom: 50px;
+    }
+
+    &__content {
+      flex-direction: column;
+    }
+
+    &__subtitle {
+      text-align: center;
+    }
+
+    &__text {
+      text-align: center;
+      margin: 0px auto 30px;
+    }
+
+    &__phone-title {
+      text-align: center;
+    }
+
+    &__phone-input-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__phone-addition {
+      flex-direction: column;
+    }
+
+    &__phone-text {
+      text-align: center;
+    }
+
+    &__phone-addition {
+      gap: 11px;
+    }
+  }
+}
+
+@media (max-width: 528px) {
+  .number {
+    padding: 50px 0px;
+    
+    &__title {
+      font-size: 32px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__text {
+      font-size: 13px;
+    }
+
+    &__phone-input {
+      max-width: 230px;
+    }
+
+    &__phone-title {
+      font-size: 14px;
+    }
+
+    &__phone-button {
+      padding: 10px 58px;
+    }
+
+    &__phone-text {
+      font-size: 8px;
+    }
+  }
+
+  .button {
+    max-width: 100px;
+    min-width: 240px;
+  }
+}

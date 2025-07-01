@@ -1,0 +1,148 @@
+.questions {
+  position: relative;
+  padding: 100px 0px;
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--light-text);
+    margin-bottom: 70px;
+  }
+
+  &__texts {
+    display: flex;
+    gap: 195px;
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    max-width: 291px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--light-text);
+
+    & span {
+      font-weight: 700;
+      background: linear-gradient(90deg, #fcb045 36.99%, #fd1d1d 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__text {
+    max-width: 308px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--light-text);
+  }
+
+  &__decor-1 {
+    user-select: none;
+    position: absolute;
+    bottom: -10%;
+    right: 30%;
+  }
+}
+
+.accordion {
+  margin: 20px auto; /* Отступы сверху/снизу и центрирование */
+  border: 0.5px solid var(--light-stroke);
+  border-radius: 5px; /* Закругление углов */
+  overflow: hidden; /* Скрываем контент за пределами границ */
+  backdrop-filter: blur(15px);
+  background: var(--black);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--light-stroke); /* Разделитель между элементами */
+}
+
+.accordion-header {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--light-text);
+
+  backdrop-filter: blur(15px);
+  background: #0a0b0e;
+  padding: 20px; /* Внутренние отступы */
+  cursor: pointer; /* Указатель при наведении */
+  font-weight: bold; /* Жирный шрифт */
+  user-select: none; /* Запрещаем выделение текста */
+}
+
+.accordion-content {
+  padding: 25px; /* Внутренние отступы */
+  display: none; /* Скрываем контент по умолчанию */
+  backdrop-filter: blur(15px);
+  background: #0a0b0e;
+}
+
+.accordion-item.active .accordion-content {
+  display: block; /* Показываем контент, когда элемент активен */
+}
+
+/* ============================================================================== */
+
+@media (max-width: 1250px) {
+  .questions {
+    &__title {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .questions {
+    &__texts {
+      text-align: center;
+      gap: 30px;
+      flex-direction: column;
+    }
+
+    &__title {
+      margin-bottom: 50px;
+    }
+
+    &__subtitle {
+      margin: 0px auto;
+    }
+
+    &__text {
+      margin: 0px auto;
+    }
+  }
+}
+
+@media (max-width: 528px) {
+  .questions {
+    padding: 50px 0px;
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__text {
+      font-size: 13px;
+    }
+  }
+
+  .accordion-header {
+    font-size: 12px;
+  }
+
+  .accordion-content {
+    padding: 15px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,14 @@
+@function prc($pxOne, $pxTwo) {
+    $result: ($pxOne / $pxTwo) * 100%;
+    @return $result;
+}
+
+@function rem($px) {
+    $result: ($px / 16) + rem;
+    @return $result;
+}
+
+@function em($px) {
+    $result: ($px / 16) + em;
+    @return $result;
+}

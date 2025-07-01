@@ -1,0 +1,123 @@
+.integrations {
+  position: relative;
+  padding: 100px 0px;
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--light-text);
+    margin-bottom: 70px;
+  }
+
+  &__subtitle {
+    max-width: 448px;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    background: linear-gradient(90deg, #fcb045 36.99%, #fd1d1d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    & span {
+      font-weight: 400;
+      color: var(--light-text);
+      -webkit-text-fill-color: white;
+    }
+    margin-bottom: 50px;
+  }
+
+  &__column {
+    margin-bottom: 40px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item-title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--light-text);
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__decor-1 {
+    user-select: none;
+    position: absolute;
+    top: 15%;
+    right: 20%;
+  }
+
+  &__decor-2 {
+    user-select: none;
+    position: absolute;
+    bottom: 7%;
+    right: 10%;
+  }
+}
+
+/* ============================================================================== */
+
+@media (max-width: 1250px) {
+  .integrations {
+    &__title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    &__subtitle {
+      font-size: 22px;
+      text-align: center;
+      margin: 0px auto 50px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .integrations {
+    &__item-title {
+      font-size: 11px;
+    }
+
+    &__row {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+}
+
+@media (max-width: 528px) {
+  .integrations {
+    padding: 50px 0px;
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__row {
+      &:nth-last-child(-n + 1) {
+        display: none;
+      }
+    }
+  }
+}
