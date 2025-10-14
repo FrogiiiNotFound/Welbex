@@ -67,10 +67,64 @@
     );
 
     padding: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    // Эффект блеска
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 0 30px rgba(252, 176, 69, 0.2);
+
+      // Анимация блеска
+      &::before {
+        left: 100%;
+      }
+
+      // Анимация иконки
+      .services__perk-icon {
+        transform: scale(1.1) rotate(5deg);
+
+        img {
+          filter: brightness(1.2) drop-shadow(0 0 10px rgba(252, 176, 69, 0.4));
+        }
+      }
+
+      // Анимация текста
+      .services__perk-title {
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+
+      .services__perk-text {
+        transform: translateY(-5px);
+        opacity: 0.9;
+      }
+    }
   }
 
   &__perk-icon {
     margin-bottom: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    img {
+      transition: all 0.4s ease;
+      filter: brightness(0.9);
+    }
   }
 
   &__perk-title {
@@ -79,6 +133,7 @@
     font-size: 18px;
     color: var(--white);
     margin-bottom: 20px;
+    transition: all 0.3s ease;
   }
 
   &__perk-text {
@@ -87,6 +142,7 @@
     font-size: 16px;
     line-height: 140%;
     color: var(--light-text);
+    transition: all 0.4s ease;
   }
 
   &__decor-1 {
@@ -148,6 +204,16 @@
     &__text {
       font-size: 13px;
     }
+
+    &__perk {
+      &:hover {
+        transform: translateY(-5px) scale(1.01);
+
+        .services__perk-icon {
+          transform: scale(1.05);
+        }
+      }
+    }
   }
 }
 
@@ -182,9 +248,15 @@
 
     &__perk {
       height: inherit;
+      min-width: 280px;
+      max-width: 280px;
 
       &:nth-last-child(-n + 5) {
         display: none;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
       }
     }
   }

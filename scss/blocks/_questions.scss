@@ -18,7 +18,6 @@
 
   &__subtitle {
     max-width: 291px;
-
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 24px;
@@ -35,7 +34,6 @@
 
   &__text {
     max-width: 308px;
-
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 18px;
@@ -51,41 +49,101 @@
 }
 
 .accordion {
-  margin: 20px auto; /* Отступы сверху/снизу и центрирование */
+  margin: 20px auto;
   border: 0.5px solid var(--light-stroke);
-  border-radius: 5px; /* Закругление углов */
-  overflow: hidden; /* Скрываем контент за пределами границ */
+  border-radius: 5px;
+  overflow: hidden;
   backdrop-filter: blur(15px);
   background: var(--black);
 }
 
 .accordion-item {
-  border-bottom: 1px solid var(--light-stroke); /* Разделитель между элементами */
+  border-bottom: 1px solid var(--light-stroke);
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #0a0b0e;
+  border: none;
+  cursor: pointer;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   color: var(--light-text);
+  transition: all 0.3s ease;
 
-  backdrop-filter: blur(15px);
-  background: #0a0b0e;
-  padding: 20px; /* Внутренние отступы */
-  cursor: pointer; /* Указатель при наведении */
-  font-weight: bold; /* Жирный шрифт */
-  user-select: none; /* Запрещаем выделение текста */
+  &:hover {
+    background: lighten(#0a0b0e, 5%);
+  }
+
+  &:focus {
+    outline: 2px solid #afafaf;
+    outline-offset: -2px;
+  }
+
+  &[aria-expanded='true'] {
+    .accordion-icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.accordion-title {
+  text-align: left;
+  flex: 1;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .accordion-content {
-  padding: 25px; /* Внутренние отступы */
-  display: none; /* Скрываем контент по умолчанию */
-  backdrop-filter: blur(15px);
   background: #0a0b0e;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+
+  &[aria-hidden='true'] {
+    display: none;
+  }
 }
 
-.accordion-item.active .accordion-content {
-  display: block; /* Показываем контент, когда элемент активен */
+.accordion-body {
+  padding: 25px;
+
+  p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--light-text);
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+// Анимация при открытии
+.accordion-content[aria-hidden='false'] {
+  animation: accordionSlideDown 0.3s ease-out;
+}
+
+@keyframes accordionSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================================================== */
@@ -139,10 +197,14 @@
 
   .accordion-header {
     font-size: 12px;
+    padding: 15px;
   }
 
-  .accordion-content {
-    padding: 15px;
-    font-size: 10px;
+  .accordion-body {
+    padding: 0 15px 15px;
+
+    p {
+      font-size: 10px;
+    }
   }
 }

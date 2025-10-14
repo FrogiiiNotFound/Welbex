@@ -86,12 +86,42 @@
   &__number-input {
     border: 1px solid var(--light-stroke);
     background: rgba(14, 16, 20, 0.6);
-    padding: 20px;
 
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 18px;
     color: var(--light-text);
+    margin-bottom: 30px;
+
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    border-radius: 4px;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(14, 16, 20, 0.8);
+      box-shadow: 0 0 0 1px rgba(252, 176, 69, 0.1), 0 4px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: rgba(252, 176, 69, 0.5);
+      background: rgba(14, 16, 20, 0.9);
+      box-shadow: 0 0 0 2px rgba(252, 176, 69, 0.2), 0 6px 25px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.3s ease;
+    }
+
+    &:hover::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
     margin-bottom: 30px;
   }
 

@@ -6,9 +6,6 @@
     justify-content: space-between;
   }
 
-  &__logo {
-  }
-
   &__logo-img {
     margin-bottom: 10px;
   }
@@ -24,12 +21,6 @@
   &__content {
     display: flex;
     gap: 140px;
-  }
-
-  &__menu {
-  }
-
-  &__nav {
   }
 
   &__addition {
@@ -66,11 +57,6 @@
 }
 
 .menu {
-  &__icon {
-  }
-
-  &__body {
-  }
 
   &__list {
     display: flex;
@@ -79,6 +65,7 @@
   }
 
   &__link {
+    cursor: pointer;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 16px;
@@ -87,15 +74,6 @@
     &:hover {
       color: var(--light-gray);
     }
-  }
-}
-.icon-menu {
-}
-.nav-header {
-  &__list {
-  }
-
-  &__link {
   }
 }
 

@@ -31,6 +31,16 @@
 
   &__column {
     margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+
+    // Задержки для колонок
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1s};
+      }
+    }
   }
 
   &__row {
@@ -46,10 +56,35 @@
     text-transform: uppercase;
     color: var(--light-text);
     margin-bottom: 30px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInLeft 0.6s ease forwards;
+
+    // Задержка для заголовков после анимации колонок
+    animation-delay: 0.8s;
+  }
+
+  &__items {
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+
+    // Задержка для контейнера с иконками после заголовка
+    animation-delay: 1s;
   }
 
   &__item {
+    cursor: pointer;
     margin-bottom: 25px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 0.5s ease forwards;
+
+    // Задержки для отдельных иконок
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{1.2s + $i * 0.1s};
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -61,6 +96,9 @@
     position: absolute;
     top: 15%;
     right: 20%;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.5s;
   }
 
   &__decor-2 {
@@ -68,6 +106,52 @@
     position: absolute;
     bottom: 7%;
     right: 10%;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.8s;
+  }
+}
+
+// Новые анимации
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -99,6 +183,15 @@
       justify-content: center;
       gap: 15px;
     }
+
+    &__column {
+      // Уменьшаем задержки на мобильных
+      @for $i from 1 through 8 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.05s};
+        }
+      }
+    }
   }
 }
 
@@ -117,6 +210,15 @@
     &__row {
       &:nth-last-child(-n + 1) {
         display: none;
+      }
+    }
+
+    &__column {
+      // Еще меньше задержек на очень маленьких экранах
+      @for $i from 1 through 8 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.03s};
+        }
       }
     }
   }

@@ -132,6 +132,8 @@
   background: var(--blue);
   padding: 21px 34px;
   border-radius: 15px;
+  transition: all 0.2s linear;
+  text-align: center;
 
   &__link {
     font-family: var(--font-family);
@@ -144,6 +146,7 @@
   &:hover {
     box-shadow: 0 0 40px 6px rgba(64, 119, 243, 0.3);
     background: var(--dark-blue);
+    transform: scale(1.05);
   }
 }
 
@@ -153,10 +156,9 @@
 
 .title-animation {
   opacity: 0;
-  transition: opacity 1s ease-in-out; /* Настраиваем продолжительность и тип анимации */
+  transition: opacity 1s ease-in-out;
 }
 
-/* Добавляем этот класс, чтобы сделать текст видимым */
 .title-animation-visible {
   opacity: 1;
 }
